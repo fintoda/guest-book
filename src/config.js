@@ -7,7 +7,7 @@ function getConfig(env) {
         networkId: 'mainnet',
         nodeUrl: 'https://rpc.mainnet.near.org',
         contractName: CONTRACT_NAME,
-        walletUrl: 'fintoda://wallet.near.org',
+        walletUrl: 'https://wallet.near.org',
         helperUrl: 'https://helper.mainnet.near.org'
       };
     // This is an example app so production is set to testnet.
@@ -19,7 +19,7 @@ function getConfig(env) {
         networkId: 'testnet',
         nodeUrl: 'https://rpc.testnet.near.org',
         contractName: CONTRACT_NAME,
-        walletUrl: 'fintoda://wallet.testnet.near.org',
+        walletUrl: 'https://wallet.testnet.near.org',
         helperUrl: 'https://helper.testnet.near.org'
       };
     case 'betanet':
@@ -52,6 +52,22 @@ function getConfig(env) {
         nodeUrl: 'https://rpc.ci-betanet.near.org',
         contractName: CONTRACT_NAME,
         masterAccount: 'test.near'
+      };
+    case 'fintoda-mainnet':
+      return {
+        networkId: 'mainnet',
+        nodeUrl: 'https://rpc.mainnet.near.org',
+        contractName: CONTRACT_NAME,
+        walletUrl: 'fintoda://wallet.near.org',
+        helperUrl: 'https://helper.mainnet.near.org'
+      };
+    case 'fintoda-testnet':
+      return {
+        networkId: 'testnet',
+        nodeUrl: 'https://rpc.testnet.near.org',
+        contractName: CONTRACT_NAME,
+        walletUrl: 'fintoda://wallet.testnet.near.org',
+        helperUrl: 'https://helper.testnet.near.org'
       };
     default:
       throw Error(`Unconfigured environment '${env}'. Can be configured in src/config.js.`);
